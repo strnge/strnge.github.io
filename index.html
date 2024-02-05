@@ -1,0 +1,76 @@
+<html>
+<!-- images from 1041uuu, original code  from some The_Bugs in some thread from like 6 years ago  -->
+<head>
+	<title>Startpage</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="search">
+		<form action="javascript:search()">
+			<input id="search" value="" placeholder="Search..." type="input" spellcheck="false" autofocus />
+		</form>
+	</div>
+	<div class="container" id="container">
+		<div class="button-1">
+			<p>General</p>
+			<div class="menu-1">
+				<a href="https://www.reddit.com/">reddit</a><br><br>
+				<a href="https://knockout.chat/">ko</a><br><br>
+				<a href="https://www.twitch.tv">twitch</a><br><br>
+				<a href="https://www.youtube.com">yt</a><br><br>
+			</div>
+		</div>
+		<div class="button-2">
+			<p>Media</p>
+			<div class="menu-2">
+				<a href="https://www.netflix.com">netflix</a><br><br>
+				<a href="https://nyaa.si/">nyaa</a><br><br>
+				<a href="https://kitsu.io/">kitsu</a><br><br>
+			</div>
+		</div>
+		<div class="button-3">
+			<p>Code</p>
+			<div class="menu-3">
+				<a href="https://www.w3schools.com/html/default.asp">w3s - html</a><br><br>
+				<a href="https://www.w3schools.com/css/default.asp">w3s - css</a><br><br>
+				<a href="https://www.w3schools.com/js/default.asp">w3s - js</a><br><br>
+				<a href="https://www.github.com/">github</a><br><br>
+				<a href="https://devdocs.io">devdocs</a><br><br>
+				<a href="https://leetcode.com/">leetcode</a><br><br>
+			</div>
+		</div>
+		<div class="button-4">
+			<p>School</p>
+			<div class="menu-4">
+				<a href="https://liveac.algonquincollege.com">o365</a><br><br>
+				<a href="https://brightspace.algonquincollege.com">brightspace</a><br><br>
+				<a href="https://acsis.algonquincollege.com">acsis</a><br><br>
+				<!--<a href="#"></a><br><br>
+							<a href="#"></a><br><br>-->
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function search() {
+			var query = document.getElementById('search').value;
+			window.location = 'https://www.google.com/search?q=' + query;
+		}
+	</script>
+	<script type="text/javascript">
+		function swap() {
+			rndimg = new Array("images/sub.gif", "images/river.gif");
+			const numImages = rndimg.length;
+			x = (Math.floor(Math.random() * numImages));
+			randomimage = (rndimg[x]);
+			document.getElementById("container").style.background = "url(" + randomimage + ")";
+			document.getElementById("container").style.backgroundSize = "cover";
+		}
+		window.onload = (event) => {
+			swap();
+		};
+	</script>
+</body>
+
+</html>
