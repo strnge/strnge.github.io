@@ -1,146 +1,95 @@
-@font-face {
-    font-family: fonty;
-    src: url(GT-Pressura-Mono-Regular.ttf);
-}
-body{
-    font-family: fonty;
-	background: #424242;
-	margin: 0;
-}
-p{
-	line-height: 60px;
-	text-align: center;
-	color: white;
-	font-weight: 500;
-	font-size: 2.4vh;
-}
-a{
-	text-decoration: none;
-	color: white;
-	font-size: 1.8vh;
-}
-a:hover::before {
-    content: '< ';
-}
+<!DOCTYPE html>
+<!-- old images from 1041uuu, current images recorded by me in Rain World, original code from The_Bugs in some thread from like 6 years ago  -->
+<head>
+	<title>Startpage</title>
+	<link href="style.css" rel="stylesheet">
+</head>
 
-a:hover::after {
-	content: ' >';
-}
-.container{
-	position: absolute;
-	border: 0;
-	height: 65%;
-	width: 57.3%;
-	margin-left: 22.5%;
-	margin-right: 22.5%;
-	top: 18%;
-	display: flex;
-	background: url('images/river.gif');
-	background-size: cover;
-}
+<body>
 
-.button-1, .button-2, .button-3, .button-4{
-	width: 33.4%;
-	height: 18%;
-    transition-property: height;
-    transition-duration: .6s;
-    transition-delay: 0s;
-	transition-timing-function: ease-in-out;
-	justify-content: flex-end;
-	overflow: hidden;
-}
-.button-1{
-	background: #100311;
-	opacity: .7;
-}
-.button-2{
-	background: #2f1c29;
-	opacity: .7;
-}
-.button-3{
-	background: #280c18;
-	opacity: .7;
-}
-.button-4{
-	background: #875e56;
-	opacity: .7;
-}
-.menu-1, .menu-2, .menu-3, .menu-4{
-	position: relative;
-	visibility: hidden;
-	opacity: 0;
-    transition: .3s;
-	text-align: center;
-}
-.button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover{
-	height: 100%;
-}
-.button-1:hover p{
-	text-decoration: underline;
-}
-.button-2:hover p{
-	text-decoration: underline;
-}
-.button-3:hover p{
-	text-decoration: underline;
-}
-.button-4:hover p{
-	text-decoration: underline;
-}
-
-
-.button-1:hover .menu-1{
-	visibility: visible;
-	opacity: 1;
-}
-.button-2:hover .menu-2{
-	visibility: visible;
-	opacity: 1;
-}
-.button-3:hover .menu-3{
-	visibility: visible;
-	opacity: 1;
-}
-.button-4:hover .menu-4{
-	visibility: visible;
-	opacity: 1;
-}
-
-/*=====Search Bar=====*/
-.search {
-    position: absolute;
-    margin: 0;
-    width: 57.3%; /* Updated to match .container */
-    height: auto;
-    top: 10%;
-    margin-left: 22.5%;
-    margin-right: 22.5%;
-}
-input {
-    box-sizing: border-box; /* Add this line */
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    color: white;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    background: #303030;
-    transition: .2s;
-    border: none;
-    font-family: fonty;
-}
-input:focus{
-    outline-width: 0;
-	box-shadow: 0px 0px 5px black;
-    font-size: 20px;
-}
-
+	<div class="search">
+		<form action="javascript:search()">
+			<input id="search" value="" placeholder="Search..." type="input" spellcheck="false" autofocus />
+		</form>
+	</div>
+	<div class="container" id="container">
+		<!-- <div class="button-1">
+			<p>Social Media</p>
+			<div class="menu-1">
+				<a href="https://www.reddit.com/">reddit</a><br><br>
 		
-@media (min-device-height: 1600px) {
-    .container, .search {
-        width: 58.35%;
-        margin-left: 20.75%;
-        margin-right: 20.75%;
-    }
-}
+			</div>
+		</div> -->
+		<div class="button-2">
+			<p>Media</p>
+			<div class="menu-2">
+				<a href="https://www.youtube.com">yt</a><br><br>
+				<a href="https://www.reddit.com/">reddit</a><br><br>
+				<a href="https://www.spotify.com">spotify</a><br><br>
+				<a href="https://www.twitch.tv">twitch</a><br><br>
+				<a href="https://www.netflix.com">netflix</a><br><br>
+			</div>
+		</div>
+		<div class="button-3">
+			<p>Code</p>
+			<div class="menu-3">
+				<a href="https://www.github.com/">github</a><br><br>
+				<a href="https://www.w3schools.com/html/default.asp">w3s - html</a><br><br>
+				<a href="https://www.w3schools.com/css/default.asp">w3s - css</a><br><br>
+				<a href="https://www.w3schools.com/js/default.asp">w3s - js</a><br><br>
+				<a href="https://devdocs.io">devdocs</a><br><br>
+				<a href="https://leetcode.com/">leetcode</a><br><br>
+				<a href="https://hackerrank.com/">hackerrank</a><br><br>
+			</div>
+		</div>
+		<div class="button-4">
+			<p>School</p>
+			<div class="menu-4">
+				<a href="https://liveac.algonquincollege.com">o365</a><br><br>
+				<a href="https://brightspace.algonquincollege.com">brightspace</a><br><br>
+				<a href="https://acsis.algonquincollege.com">acsis</a><br><br>
+				<a href="https://app.milanote.com">milanote</a><br><br>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function search() {
+			let query = document.getElementById('search').value;
+			window.location = 'https://www.google.com/search?q=' + query;
+		}
+	</script>
+	<script type="text/javascript">
+		function swap() {
+			const rndimg = 	[["todimg/night1.gif", "todimg/night2.gif"]
+							,["todimg/morn1.gif","todimg/morn2.gif","todimg/morn3.gif"]
+							,["todimg/after1.gif","todimg/after2.gif","todimg/after3.gif"]
+							,["todimg/even1.gif","todimg/even2.gif"]];
+			const now = new Date();
+			const hours = now.getHours();
+			var rowDeterminer = 0;
+			var chosenImage;
+			if(hours > 0 && hours < 5){
+				rowDeterminer = 0;
+			}else if(hours > 5 && hours < 11){
+				rowDeterminer = 1;
+			}else if(hours > 11 && hours < 17){
+				rowDeterminer = 2;
+			}else {
+				rowDeterminer = 3;
+			}
+			let columnDeterminer = Math.floor(Math.random() * rndimg[rowDeterminer].length);
+			
+			chosenImage = rndimg[rowDeterminer][columnDeterminer];
+			
+
+			document.getElementById("container").style.background = "url(" + chosenImage + ")";
+			document.getElementById("container").style.backgroundSize = "cover";
+		}
+		window.onload = (event) => {
+			swap();
+		};
+	</script>
+</body>
+
+</html>
